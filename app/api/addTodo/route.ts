@@ -11,7 +11,7 @@ export async function POST(req : NextRequest , res : NextResponse){
 
     try{
 
-        const {title  ,desc , completed} = req.json();
+        const {title  ,desc , completed} = await  req.json();
 
         if(!title || !desc || ! completed){
            return NextResponse.json({message : "all fields are required"} , {status : 400});

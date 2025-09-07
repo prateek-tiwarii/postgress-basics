@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function DELETE(req : NextRequest , res : NextResponse){
 
     try{
-        const {id} = req.json();
+        const {id} =  await req.json();
 
         if(!id){
             return NextResponse.json({message : "id is required"} , {status : 400});
